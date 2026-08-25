@@ -188,6 +188,15 @@
       "label": "Divisa",
       "title": "Divisa"
     },
+    "curtailer": {
+      "description": "Dispositiu que limita la injecció a petició de l'operador de la xarxa (§ 9 EEG). Molts inversors solars ho permeten directament a través de la configuració del seu comptador solar. Només alguns fabricants o sistemes multi inversor necessiten una configuració separada.",
+      "generic": "Integracions genèriques",
+      "specific": "Integracions específiques",
+      "template": "Fabricant",
+      "title": "Restricció",
+      "titleAdd": "Afegeix un dispositiu de restricció",
+      "titleEdit": "Edita el dispositiu de restricció"
+    },
     "deviceValue": {
       "activeClients": "Clients actius",
       "amount": "Import",
@@ -212,7 +221,7 @@
       "currentRange": "Corrent",
       "curtailLimit": "Límit d’injecció",
       "curtailable": "Reduïble",
-      "curtailed": "Injecció limitada",
+      "curtailed": "Límit d'injecció",
       "detected": "Detectat",
       "dimLimit": "Límit de consum",
       "dimmed": "Consum limitat",
@@ -539,6 +548,7 @@
     "main": {
       "addAdditional": "Afegeix comptador addicional",
       "addConsumer": "Afegeix consumidor",
+      "addCurtailer": "Afegeix dispositiu de restricció",
       "addGrid": "Afegeix comptador de xarxa",
       "addLoadpoint": "Afegeix punt de recàrrega o escalfador",
       "addPvBattery": "Afegeix solar o bateria",
@@ -639,6 +649,7 @@
         "aux": "Afegeix consumidor autoregulat",
         "battery": "Afegeix comptador de bateria",
         "consumer": "Afegeix consumidor normal",
+        "grid": "Afegeix mesurador de xarxa",
         "pv": "Afegeix comptador solar"
       },
       "save": "Desa",
@@ -1718,6 +1729,10 @@
     "vehicle": "Vehicle"
   },
   "settings": {
+    "dateFormat": {
+      "auto": "Automàtic",
+      "dmy": "DD/MM/YYYY"
+    },
     "deviceInfo": "Els paràmetres d’aquest diàleg només afecten aquest dispositiu.",
     "fullscreen": {
       "enter": "Activa la pantalla completa",
