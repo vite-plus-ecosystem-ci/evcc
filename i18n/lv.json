@@ -1718,6 +1718,13 @@
     "vehicle": "Transportlīdzeklis"
   },
   "settings": {
+    "dateFormat": {
+      "auto": "Automātiski",
+      "dmy": "DD/MM/GGGG",
+      "label": "Datuma formāts",
+      "mdy": "MM/DD/GGGG",
+      "ymd": "GGGG-MM-DD"
+    },
     "deviceInfo": "Iestatījumi ko veicat šajā dialogā, ietekmē tikai šo ierīci.",
     "fullscreen": {
       "enter": "Ieslēgt pilnekrānu",
@@ -1729,7 +1736,7 @@
       "value": "Iespējot eksperimentālās funkcijas."
     },
     "language": {
-      "auto": "Automātiski",
+      "auto": "Automātiskais režīms",
       "label": "Valoda"
     },
     "loadpoints": {
