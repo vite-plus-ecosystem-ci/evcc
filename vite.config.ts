@@ -26,8 +26,7 @@ export default defineConfig({
         input: [{ auto: true }, "!server/openapi.state.yaml"],
       },
       test: {
-        command:
-          "cross-env TZ=Europe/Berlin NODE_OPTIONS=--no-experimental-webstorage vp test",
+        command: "cross-env TZ=Europe/Berlin NODE_OPTIONS=--no-experimental-webstorage vp test",
         // vitest keeps its own result cache below node_modules
         input: [{ auto: true }, "!**/node_modules/.vite/vitest/**"],
       },

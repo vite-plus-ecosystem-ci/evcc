@@ -9,7 +9,7 @@ on:
 jobs:
   docker:
     name: Publish Docker :nightly
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -28,8 +28,8 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
 
-      # depot builders keep the Dockerfile's cache mounts on their own volumes,
-      # so they need neither buildx nor the cache dance
+        # depot builders keep the Dockerfile's cache mounts on their own volumes,
+        # so they need neither buildx nor the cache dance
       - name: Setup Depot
         uses: depot/setup-action@15c09a5f77a0840ad4bce955686522a257853461 # v1.7.1
 
@@ -51,6 +51,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
+        # Ecosystem smoke test: publishing needs credentials unavailable on the fork.
+        if: ${{ github.repository_owner != 'vite-plus-ecosystem-ci' }}
       - name: Delete old nightly.* tags
         run: |
           old_tags=$(curl -s "https://hub.docker.com/v2/repositories/evcc/evcc/tags/?page_size=100" | jq -r '.results | map(select(.name | startswith("nightly."))) | sort_by(.last_updated) | reverse | .[1:] | .[].name')
