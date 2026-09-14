@@ -10,7 +10,7 @@ on:
 jobs:
   clean:
     name: Clean
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -39,7 +39,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -54,7 +54,7 @@ jobs:
           go-version-file: go.mod
         id: go
 
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.20.0
         with:
           node-version-file: ".node-version"
           cache: true
@@ -66,7 +66,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -86,7 +86,7 @@ jobs:
 
   lint:
     name: Lint
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -117,14 +117,14 @@ jobs:
     permissions:
       contents: read
       actions: write
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
 
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.20.0
         with:
           node-version-file: ".node-version"
           cache: true
@@ -181,7 +181,7 @@ jobs:
 
   integration:
     name: Integration
-    runs-on: depot-ubuntu-24.04-arm-32
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -197,7 +197,7 @@ jobs:
           go-version-file: go.mod
         id: go
 
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.20.0
         with:
           node-version-file: ".node-version"
           cache: true
@@ -310,7 +310,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: voidzero-dev/setup-vp@v1
+      - uses: voidzero-dev/setup-vp@v1.20.0
         with:
           node-version-file: ".node-version"
           cache: true
