@@ -13,7 +13,7 @@ on:
 jobs:
   clean:
     name: Clean
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'depot-ubuntu-24.04-arm' }}
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'ubuntu-24.04-arm' }}
 
     permissions:
       contents: read
@@ -42,7 +42,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'depot-ubuntu-24.04-arm' }}
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'ubuntu-24.04-arm' }}
 
     permissions:
       contents: read
@@ -69,7 +69,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'depot-ubuntu-24.04-arm' }}
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'ubuntu-24.04-arm' }}
 
     permissions:
       contents: read
@@ -89,7 +89,7 @@ jobs:
 
   lint:
     name: Lint
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'depot-ubuntu-24.04-arm' }}
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'ubuntu-24.04-arm' }}
 
     permissions:
       contents: read
@@ -120,7 +120,7 @@ jobs:
     permissions:
       contents: read
       actions: write
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'depot-ubuntu-24.04-arm' }}
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-24.04-arm' || 'ubuntu-24.04-arm' }}
 
     steps:
       - uses: actions/checkout@v7
@@ -184,7 +184,7 @@ jobs:
 
   integration-shard:
     name: Integration ${{ matrix.shard }}/2
-    runs-on: depot-ubuntu-24.04-arm-32
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -284,7 +284,7 @@ jobs:
     name: Integration
     needs: integration-shard
     if: always()
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
