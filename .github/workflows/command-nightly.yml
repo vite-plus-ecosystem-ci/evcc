@@ -18,7 +18,7 @@ jobs:
     if: |
       startsWith(github.event.comment.body, '/nightly') &&
       contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
       issues: write
@@ -69,7 +69,7 @@ jobs:
       - nightly
       - docker
     if: always() && needs.nightly.result != 'skipped'
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     permissions:
       issues: write
       pull-requests: write

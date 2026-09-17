@@ -11,7 +11,7 @@ on:
 jobs:
   guard:
     name: Validate Tag
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
     outputs:
@@ -43,7 +43,7 @@ jobs:
     needs:
       - guard
       - call-build-workflow
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
       id-token: write # depot OIDC
@@ -91,7 +91,7 @@ jobs:
     needs:
       - guard
       - call-build-workflow
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: write
@@ -169,7 +169,7 @@ jobs:
       - guard
       - docker
     if: needs.guard.outputs.latest == 'true'
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -189,7 +189,7 @@ jobs:
       - guard
       - docker
     if: needs.guard.outputs.latest == 'true'
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: read
@@ -220,7 +220,7 @@ jobs:
     needs:
       - docker
       - apt
-    runs-on: depot-ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
 
     permissions:
       contents: write
