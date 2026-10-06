@@ -165,7 +165,7 @@ jobs:
           show_full_output: true
           # PRs may come from forks without write access; the token is scoped to
           # labels only. PR title/body/diff are treated as untrusted data.
-          allowed_non_write_users: '*'
+          allowed_non_write_users: "*"
           additional_permissions: |
             actions: read
           # labeling is a classification over the file list, Haiku is enough
